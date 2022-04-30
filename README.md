@@ -5,22 +5,14 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of udesadatos is to ...
+The goal of udesadatos is to Academic Rmarkdowns Templates for UDESA.
 
 ## Installation
 
 You can install the development version of udesadatos like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+devtools::install_github("rafzamb/udesadatos")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(udesadatos)
-## basic example code
-```
 
