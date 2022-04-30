@@ -1,11 +1,25 @@
-Package: udesa
+Package: udesadatos
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Package With Academic Rmarkdowns Templates for UDESA 
 Version: 0.1.0
-Author: Who wrote it
+Authors@R: 
+    c(person(given = "Rafael",
+             family = "Zambrano",
+             role = c("aut", "cre"),
+             email = "rafazambragit@gmail.com"),
+      person(given = "Daniel",
+             family = "Fraiman",
+             role = "aut")
+             )
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    R (>= 3.6.0)
+Suggests: 
+    tidyverse,
+    modeldata,
+    skimr

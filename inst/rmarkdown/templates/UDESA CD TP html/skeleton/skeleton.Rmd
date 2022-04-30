@@ -1,0 +1,113 @@
+---
+title: |
+  | Universidad de San Andrés
+  | Departamento de Matemática y Ciencias
+  | Maestría en Ciencia de Datos
+  
+subtitle: |
+  | Asignatura: Programación para el Análisis de Datos
+  | TP Final
+
+date: "`r format(Sys.time(), '%d-%m-%Y')`"
+
+author:
+- name: Juan Luna
+- name: Carlos Mora
+
+output: 
+  html_document:
+    css: "format.css"
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    number_sections: true
+    df_print: paged
+    self_contained: true
+    includes:
+      before_body: header.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+# Enunciado
+
+Utilizando el dataset "Sacramento" del paquete modeldata , realizar algunas transformaciones de datos, un análisis exploratorio de datos, ajuste un modelo y formule las conclusiones que considere.
+
+# Librerias
+
+```{r}
+library(tidyverse) # Manipulación y visualización de datos
+library(modeldata) # conjunto de datasets
+library(skimr) # EDAs rapidos
+```
+
+# Carga de datos
+
+```{r}
+data("Sacramento" ,package = "modeldata")
+
+Sacramento %>% head()
+```
+
+# Transformación de datos
+
+-   Filtro de ciudad y tipo de residencia.
+-   Creación de la variable "espacios", representa la suma de habitaciones y baños.
+-   Se excluye la columna "zip".
+
+```{r}
+data_final <- Sacramento %>% 
+  
+  filter(city == "SACRAMENTO", type == "Residential") %>% 
+  
+  mutate(espacios = beds + baths) %>% 
+  
+  select(-zip)
+```
+
+# EDA
+
+```{r}
+skim(data_final)
+```
+
+# Modelado
+
+## Ajuste
+
+```{r}
+modelo <- lm(formula = price ~ latitude + longitude + espacios + sqft, 
+             data = data_final)
+```
+
+```{r}
+modelo %>% summary()
+```
+
+## Diagnóstico
+
+```{r}
+modelo %>% plot()
+```
+
+# Conclusiones
+
+# Material de apoyo
+
+-   [Tidyverse](https://www.tidyverse.org/): Metapaquete para la carga, manipulación y visualización de datos.
+
+-   [Officeverse](https://ardata-fr.github.io/officeverse/): Libro que muestra extensiones de Rmarkdown para interactuar con la suite de **Microsoft Office** (ppt, word).
+
+-   [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) : Libro de Rmarkdown avanzado.
+
+-   [Easaystats](https://easystats.github.io/easystats/): Metapaquete/ecosistema para el modelado y análisis estadístico avanzado.
+
+-   [Tidymodels](https://www.tidymodels.org/): Framework de vanguardia para el modelado estadístico y de machine learning en R.
+
+    -   [Libro](https://www.tmwr.org/)
+
+    -   [Metapaquete](https://www.tidymodels.org/packages/)

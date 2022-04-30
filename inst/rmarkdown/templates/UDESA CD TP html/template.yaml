@@ -1,0 +1,4 @@
+name: UDESA CD TP html
+description: >
+   Template para la entrega de TPs de la Maestría en Ciencia de datos de la UDESA.
+create_dir: FALSE
