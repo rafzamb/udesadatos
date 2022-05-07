@@ -4,6 +4,19 @@ template:
   bootstrap: 5
 
 navbar:
-  structure:
-    left:  [intro, reference, news]
-    right: [search, github]
+  title: udesadatos
+  right:
+   - icon: fab fa-github
+     href: https://github.com/rafzamb/udesadatos
+
+  opengraph:
+    image:
+      src: man/figures/logo.png
+    twitter:
+      creator: "@rafa_zamr"
+      card: summary_large_image
+
+authors:
+  Rafael Zambrano:
+    href: https://github.com/rafzamb
+  Daniel Fraiman:
