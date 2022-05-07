@@ -111,3 +111,5 @@ modelo %>% plot()
     -   [Libro](https://www.tmwr.org/)
 
     -   [Metapaquete](https://www.tidymodels.org/packages/)
+
+-   [Post Tidypandas](https://rafael-zambrano-blog-ds.netlify.app/posts/tidypandas/): Post con casos de uso de R y Python dentro de un mismo flujo de trabajo.
