@@ -1,5 +1,9 @@
 url: https://rafzamb.github.io/udesadatos/
+
 template:
   bootstrap: 5
-  bootswatch: cerulean
 
+navbar:
+  structure:
+    left:  [intro, reference, news]
+    right: [search, github]
